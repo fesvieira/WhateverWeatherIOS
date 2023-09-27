@@ -16,7 +16,7 @@
 		1152DC9C2AC364BD00FF03A4 /* WhateverWeatherIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DC9B2AC364BD00FF03A4 /* WhateverWeatherIOSTests.swift */; };
 		1152DCA62AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DCA52AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift */; };
 		1152DCA82AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */; };
-		117D18AB2AC369C5009192BC /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D18AA2AC369C5009192BC /* ContentView2.swift */; };
+		117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117289BC2AC4BE8A00551518 /* FormsTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		1152DCA12AC364BD00FF03A4 /* WhateverWeatherIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhateverWeatherIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1152DCA52AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITests.swift; sourceTree = "<group>"; };
 		1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		117D18AA2AC369C5009192BC /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		117289BC2AC4BE8A00551518 /* FormsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				11359BB42AC4B93B0007336D /* NextDayChip.swift */,
+				117289BC2AC4BE8A00551518 /* FormsTextField.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -130,7 +131,6 @@
 				1152DC8C2AC364BC00FF03A4 /* ContentView.swift */,
 				1152DC8E2AC364BD00FF03A4 /* Assets.xcassets */,
 				1152DC902AC364BD00FF03A4 /* Preview Content */,
-				117D18AA2AC369C5009192BC /* ContentView2.swift */,
 			);
 			path = WhateverWeatherIOS;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117D18AB2AC369C5009192BC /* ContentView2.swift in Sources */,
 				1124CA502AC4AE9A0070A733 /* Colors.swift in Sources */,
+				117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */,
 				1152DC8D2AC364BC00FF03A4 /* ContentView.swift in Sources */,
 				1152DC8B2AC364BC00FF03A4 /* WhateverWeatherIOSApp.swift in Sources */,
 				11359BB52AC4B93B0007336D /* NextDayChip.swift in Sources */,
