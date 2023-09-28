@@ -19,6 +19,13 @@
 		117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117289BC2AC4BE8A00551518 /* FormsTextField.swift */; };
 		11AB326E2AC5295200A42C4D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB326D2AC5295100A42C4D /* LottieView.swift */; };
 		11AB32712AC529CD00A42C4D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 11AB32702AC529CD00A42C4D /* Lottie */; };
+		11AB327A2AC52B4B00A42C4D /* some_clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32742AC52B4B00A42C4D /* some_clouds.json */; };
+		11AB327B2AC52B4B00A42C4D /* sunny.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32752AC52B4B00A42C4D /* sunny.json */; };
+		11AB327C2AC52B4B00A42C4D /* rainy.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32762AC52B4B00A42C4D /* rainy.json */; };
+		11AB327D2AC52B4B00A42C4D /* clear_night.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32772AC52B4B00A42C4D /* clear_night.json */; };
+		11AB327E2AC52B4B00A42C4D /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32782AC52B4B00A42C4D /* loading.json */; };
+		11AB327F2AC52B4B00A42C4D /* rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32792AC52B4B00A42C4D /* rain.json */; };
+		11AB32812AC52BC200A42C4D /* LottieAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB32802AC52BC200A42C4D /* LottieAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 		1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		117289BC2AC4BE8A00551518 /* FormsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsTextField.swift; sourceTree = "<group>"; };
 		11AB326D2AC5295100A42C4D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		11AB32742AC52B4B00A42C4D /* some_clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = some_clouds.json; path = ../../../../../Desktop/some_clouds.json; sourceTree = "<group>"; };
+		11AB32752AC52B4B00A42C4D /* sunny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sunny.json; path = ../../../../../Desktop/sunny.json; sourceTree = "<group>"; };
+		11AB32762AC52B4B00A42C4D /* rainy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rainy.json; path = ../../../../../Desktop/rainy.json; sourceTree = "<group>"; };
+		11AB32772AC52B4B00A42C4D /* clear_night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = clear_night.json; path = ../../../../../Desktop/clear_night.json; sourceTree = "<group>"; };
+		11AB32782AC52B4B00A42C4D /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../Desktop/loading.json; sourceTree = "<group>"; };
+		11AB32792AC52B4B00A42C4D /* rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rain.json; path = ../../../../../Desktop/rain.json; sourceTree = "<group>"; };
+		11AB32802AC52BC200A42C4D /* LottieAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,11 +144,11 @@
 		1152DC892AC364BC00FF03A4 /* WhateverWeatherIOS */ = {
 			isa = PBXGroup;
 			children = (
+				11AB32722AC52AAC00A42C4D /* Assets */,
 				11359BB02AC4B9010007336D /* ui */,
 				1124CA4E2AC4AE8E0070A733 /* Helpers */,
 				1152DC8A2AC364BC00FF03A4 /* WhateverWeatherIOSApp.swift */,
 				1152DC8C2AC364BC00FF03A4 /* ContentView.swift */,
-				1152DC8E2AC364BD00FF03A4 /* Assets.xcassets */,
 				1152DC902AC364BD00FF03A4 /* Preview Content */,
 			);
 			path = WhateverWeatherIOS;
@@ -163,6 +177,29 @@
 				1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */,
 			);
 			path = WhateverWeatherIOSUITests;
+			sourceTree = "<group>";
+		};
+		11AB32722AC52AAC00A42C4D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				11AB32732AC52ABD00A42C4D /* Lottie */,
+				1152DC8E2AC364BD00FF03A4 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		11AB32732AC52ABD00A42C4D /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				11AB32772AC52B4B00A42C4D /* clear_night.json */,
+				11AB32782AC52B4B00A42C4D /* loading.json */,
+				11AB32792AC52B4B00A42C4D /* rain.json */,
+				11AB32762AC52B4B00A42C4D /* rainy.json */,
+				11AB32742AC52B4B00A42C4D /* some_clouds.json */,
+				11AB32752AC52B4B00A42C4D /* sunny.json */,
+				11AB32802AC52BC200A42C4D /* LottieAsset.swift */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +312,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AB327C2AC52B4B00A42C4D /* rainy.json in Resources */,
 				1152DC922AC364BD00FF03A4 /* Preview Assets.xcassets in Resources */,
+				11AB327D2AC52B4B00A42C4D /* clear_night.json in Resources */,
+				11AB327F2AC52B4B00A42C4D /* rain.json in Resources */,
+				11AB327A2AC52B4B00A42C4D /* some_clouds.json in Resources */,
+				11AB327E2AC52B4B00A42C4D /* loading.json in Resources */,
 				1152DC8F2AC364BD00FF03A4 /* Assets.xcassets in Resources */,
+				11AB327B2AC52B4B00A42C4D /* sunny.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +346,7 @@
 			files = (
 				1124CA502AC4AE9A0070A733 /* Colors.swift in Sources */,
 				117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */,
+				11AB32812AC52BC200A42C4D /* LottieAsset.swift in Sources */,
 				1152DC8D2AC364BC00FF03A4 /* ContentView.swift in Sources */,
 				1152DC8B2AC364BC00FF03A4 /* WhateverWeatherIOSApp.swift in Sources */,
 				11359BB52AC4B93B0007336D /* NextDayChip.swift in Sources */,

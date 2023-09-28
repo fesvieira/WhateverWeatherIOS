@@ -13,18 +13,19 @@ struct ContentView: View {
         ZStack {
             ScrollView {
                 VStack {
-                    Text("C")
+                    Text("°C")
                         .padding(8)
                         .foregroundStyle(.white)
                         .background(.AppDarkBlue)
                         .clipShape(Circle())
                         .frame(maxWidth: .infinity, alignment: .trailing)
                     
-                    ZStack{
-                        
-                    }
-                    .frame(width: 180, height: 180)
-                    .background(.NightGradientTop)
+                    LottieView(
+                        name: LottieAsset.sunny.name,
+                        loopMode: .loop,
+                        speed: 0.5
+                    )
+                        .frame(width: 180, height: 180)
                     
                     Text("Colorado, Paraná")
                         .foregroundStyle(.white)
@@ -46,6 +47,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
+            .padding(.bottom, 90)
             
             FormsTextField(
                 text: $currentCity,
@@ -58,14 +60,7 @@ struct ContentView: View {
         .background(.SunnyGradientTop)
     }
 }
-/*
- NavigationView {
- List(model.notes) { note in
- NavigationLink(note.title, destination: NoteEditor(id: note.id))
- }
- Text("Select a Note")
- }
- */
+
 #Preview {
     ContentView()
 }

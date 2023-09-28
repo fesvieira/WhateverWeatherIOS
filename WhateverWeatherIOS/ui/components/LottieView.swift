@@ -13,6 +13,7 @@ struct LottieView: UIViewRepresentable {
     var name: String
     var loopMode: LottieLoopMode
     var delay: Double = 0.0
+    var speed: CGFloat = 1.0
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)
@@ -23,6 +24,7 @@ struct LottieView: UIViewRepresentable {
 
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode
+        animationView.animationSpeed = speed
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             animationView.play()
         }
