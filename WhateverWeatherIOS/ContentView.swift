@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var currentCity = ""
     var body: some View {
         ZStack {
             ScrollView {
@@ -46,16 +47,12 @@ struct ContentView: View {
                 .padding()
             }
             
-            
-            TextField(text: Binding.constant("City"), label: {})
-                .padding()
-                .foregroundStyle(.white)
-                .background(
-                    .AppDarkBlue
-                )
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 32, height: 32)))
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                .padding()
+            FormsTextField(
+                text: $currentCity,
+                placeholder: "Type a city"
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(.SunnyGradientTop)

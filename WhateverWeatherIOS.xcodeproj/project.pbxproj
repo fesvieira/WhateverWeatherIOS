@@ -17,6 +17,8 @@
 		1152DCA62AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DCA52AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift */; };
 		1152DCA82AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */; };
 		117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117289BC2AC4BE8A00551518 /* FormsTextField.swift */; };
+		11AB326E2AC5295200A42C4D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB326D2AC5295100A42C4D /* LottieView.swift */; };
+		11AB32712AC529CD00A42C4D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 11AB32702AC529CD00A42C4D /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		1152DCA52AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITests.swift; sourceTree = "<group>"; };
 		1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		117289BC2AC4BE8A00551518 /* FormsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsTextField.swift; sourceTree = "<group>"; };
+		11AB326D2AC5295100A42C4D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AB32712AC529CD00A42C4D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,7 @@
 			children = (
 				11359BB42AC4B93B0007336D /* NextDayChip.swift */,
 				117289BC2AC4BE8A00551518 /* FormsTextField.swift */,
+				11AB326D2AC5295100A42C4D /* LottieView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -176,6 +181,9 @@
 			dependencies = (
 			);
 			name = WhateverWeatherIOS;
+			packageProductDependencies = (
+				11AB32702AC529CD00A42C4D /* Lottie */,
+			);
 			productName = WhateverWeatherIOS;
 			productReference = 1152DC872AC364BC00FF03A4 /* WhateverWeatherIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -248,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 1152DC7E2AC364BC00FF03A4;
+			packageReferences = (
+				11AB326F2AC529CD00A42C4D /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 1152DC882AC364BC00FF03A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,6 +306,7 @@
 				1152DC8D2AC364BC00FF03A4 /* ContentView.swift in Sources */,
 				1152DC8B2AC364BC00FF03A4 /* WhateverWeatherIOSApp.swift in Sources */,
 				11359BB52AC4B93B0007336D /* NextDayChip.swift in Sources */,
+				11AB326E2AC5295200A42C4D /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11AB326F2AC529CD00A42C4D /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11AB32702AC529CD00A42C4D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11AB326F2AC529CD00A42C4D /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1152DC7F2AC364BC00FF03A4 /* Project object */;
 }

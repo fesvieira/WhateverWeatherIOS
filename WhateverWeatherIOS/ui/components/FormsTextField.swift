@@ -43,31 +43,31 @@ struct FormsTextField: View {
                     if text.isEmpty {
                         Text(placeholder)
                             .font(.headline)
-                            .foregroundColor(.lavenderWhite.opacity(0.5))
+                            .foregroundColor(.white.opacity(0.6))
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     if (isSecure) {
                         SecureField(text: $text){}
                             .font(.headline)
-                            .foregroundColor(.lavenderWhite)
+                            .foregroundColor(.white)
                     } else {
                         TextField(text: $text){}
                             .font(.headline)
-                            .foregroundColor(.lavenderWhite)
+                            .foregroundColor(.white)
                     }
                 }
                 
                 if let rightView { rightView }
             }
             .padding(16)
-            .background(.davyGray)
+            .background(.AppDarkBlue)
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .frame(maxWidth: .infinity)
             
             if !error.isEmpty {
                 Text(error)
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.razzRed)
+                    .foregroundColor(.red)
                     .frame(maxWidth: .infinity, maxHeight: 16, alignment: .leading)
                     .padding(.leading, 16)
             } else {
@@ -96,7 +96,6 @@ struct FormsTextField_Previews: PreviewProvider {
             }
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.raisinBlack)
         }
     }
     static var previews: some View {
