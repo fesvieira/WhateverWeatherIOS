@@ -17,6 +17,8 @@
 		1152DCA62AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DCA52AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift */; };
 		1152DCA82AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */; };
 		117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117289BC2AC4BE8A00551518 /* FormsTextField.swift */; };
+		11A7DFBE2AC5A446009EAF74 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A7DFBD2AC5A446009EAF74 /* WeatherService.swift */; };
+		11A7DFC12AC5A47C009EAF74 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A7DFC02AC5A47C009EAF74 /* WeatherData.swift */; };
 		11AB326E2AC5295200A42C4D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB326D2AC5295100A42C4D /* LottieView.swift */; };
 		11AB32712AC529CD00A42C4D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 11AB32702AC529CD00A42C4D /* Lottie */; };
 		11AB327A2AC52B4B00A42C4D /* some_clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 11AB32742AC52B4B00A42C4D /* some_clouds.json */; };
@@ -59,6 +61,8 @@
 		1152DCA52AC364BD00FF03A4 /* WhateverWeatherIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITests.swift; sourceTree = "<group>"; };
 		1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverWeatherIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		117289BC2AC4BE8A00551518 /* FormsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsTextField.swift; sourceTree = "<group>"; };
+		11A7DFBD2AC5A446009EAF74 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		11A7DFC02AC5A47C009EAF74 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		11AB326D2AC5295100A42C4D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		11AB32742AC52B4B00A42C4D /* some_clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = some_clouds.json; path = ../../../../../Desktop/some_clouds.json; sourceTree = "<group>"; };
 		11AB32752AC52B4B00A42C4D /* sunny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sunny.json; path = ../../../../../Desktop/sunny.json; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		1152DC892AC364BC00FF03A4 /* WhateverWeatherIOS */ = {
 			isa = PBXGroup;
 			children = (
+				11A7DFBF2AC5A45B009EAF74 /* Model */,
+				11A7DFBC2AC5A433009EAF74 /* Networking */,
 				11AB32722AC52AAC00A42C4D /* Assets */,
 				11359BB02AC4B9010007336D /* ui */,
 				1124CA4E2AC4AE8E0070A733 /* Helpers */,
@@ -177,6 +183,22 @@
 				1152DCA72AC364BD00FF03A4 /* WhateverWeatherIOSUITestsLaunchTests.swift */,
 			);
 			path = WhateverWeatherIOSUITests;
+			sourceTree = "<group>";
+		};
+		11A7DFBC2AC5A433009EAF74 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				11A7DFBD2AC5A446009EAF74 /* WeatherService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		11A7DFBF2AC5A45B009EAF74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11A7DFC02AC5A47C009EAF74 /* WeatherData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		11AB32722AC52AAC00A42C4D /* Assets */ = {
@@ -344,12 +366,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A7DFBE2AC5A446009EAF74 /* WeatherService.swift in Sources */,
 				1124CA502AC4AE9A0070A733 /* Colors.swift in Sources */,
 				117289BD2AC4BE8A00551518 /* FormsTextField.swift in Sources */,
 				11AB32812AC52BC200A42C4D /* LottieAsset.swift in Sources */,
 				1152DC8D2AC364BC00FF03A4 /* ContentView.swift in Sources */,
 				1152DC8B2AC364BC00FF03A4 /* WhateverWeatherIOSApp.swift in Sources */,
 				11359BB52AC4B93B0007336D /* NextDayChip.swift in Sources */,
+				11A7DFC12AC5A47C009EAF74 /* WeatherData.swift in Sources */,
 				11AB326E2AC5295200A42C4D /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
