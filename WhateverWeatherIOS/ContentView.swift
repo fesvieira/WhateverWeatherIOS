@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var currentCity = ""
+    @StateObject private var viewModel = WeatherViewModel()
+
+    
     var body: some View {
         ZStack {
             ScrollView {
                 VStack {
-                    Text("°C")
+                    Text(viewModel.unit)
                         .padding(8)
                         .foregroundStyle(.white)
                         .background(.AppDarkBlue)
@@ -27,21 +29,21 @@ struct ContentView: View {
                     )
                         .frame(width: 180, height: 180)
                     
-                    Text("Colorado, Paraná")
+                    Text(viewModel.currentCity)
                         .foregroundStyle(.white)
                         .font(.title2)
                     
-                    Text("29")
+                    Text(String(viewModel.weatherData?.weather.temp_c ?? 0.0))
                         .foregroundStyle(.white)
                         .font(.custom("system", size: 120))
                     
-                    Text("Sunny")
+                    Text(viewModel.weatherData?.weather.condition.text ?? "")
                         .foregroundStyle(.white)
                         .font(.title2)
                     
                     HStack {
-                        ForEach(0..<3) { _ in
-                            NextDayChip()
+                        ForEach(viewModel.weatherData?.forecast.forecastDays ?? [], id: \.self) { forecastDay in
+                            NextDayChip(forecastDay: forecastDay)
                         }
                     }
                 }
@@ -50,7 +52,7 @@ struct ContentView: View {
             .padding(.bottom, 90)
             
             FormsTextField(
-                text: $currentCity,
+                text: viewModel.currentCityBinding(),
                 placeholder: "Type a city"
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
@@ -59,8 +61,4 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(.SunnyGradientTop)
     }
-}
-
-#Preview {
-    ContentView()
 }

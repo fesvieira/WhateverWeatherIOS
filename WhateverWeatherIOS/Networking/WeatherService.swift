@@ -9,22 +9,19 @@ import Foundation
 import CoreLocation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherData.Entity)
     func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=e72ca729af228beabd5d20e3b7749713&units=metric"
+    let weatherURL = K.weatherURL
+    let weatherPath = "/v1/forecast.json?key=\(K.weatherKey)"
+    var baseURL: String { "\(weatherURL)\(weatherPath)" }
     
     var delegate: WeatherManagerDelegate?
     
-    func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
-        performRequest(with: urlString)
-    }
-    
-    func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+    func fetchWeather(query: String) {
+        let urlString = "\(baseURL)&q=\(query)&days=3"
         performRequest(with: urlString)
     }
     
@@ -36,29 +33,23 @@ struct WeatherManager {
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
-                if let safeData = data {
-                    if let weather = self.parseJSON(safeData) {
-                        self.delegate?.didUpdateWeather(self, weather: weather)
-                    }
+                if let safeData = data, let weather = self.parseJSON(safeData) {
+                    self.delegate?.didUpdateWeather(self, weather: weather)
                 }
             }
             task.resume()
         }
     }
     
-    func parseJSON(_ weatherData: Data) -> WeatherModel? {
+    func parseJSON(_ weatherData: Data) -> WeatherData.Entity? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            let id = decodedData.weather[0].id
-            let temp = decodedData.main.temp
-            let name = decodedData.name
-            
-            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
-            return weather
-            
+            let decodedData: WeatherData.Entity = try decoder.decode(WeatherData.Entity.self, from: weatherData)
+            print("success")
+            return decodedData
         } catch {
             delegate?.didFailWithError(error: error)
+            print(error)
             return nil
         }
     }

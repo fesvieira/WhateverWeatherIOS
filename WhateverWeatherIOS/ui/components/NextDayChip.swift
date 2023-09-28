@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct NextDayChip: View {
+    var forecastDay: WeatherData.ForecastDay
+    
     var body: some View {
         VStack {
-            Text("8/11")
+            Text(forecastDay.date)
                 .foregroundStyle(.white)
                 .font(.title2)
             
-            Image(systemName: "star.fill")
+            AsyncImage(url: URL(string: "https:\(forecastDay.day.condition.icon)"))
                 .frame(width: 16, height: 16)
                 .foregroundColor(.white)
             
-            Text("30")
+            Text(String(forecastDay.day.avgtemp_c))
                 .foregroundStyle(.white)
                 .font(.title2)
         }
@@ -27,8 +29,4 @@ struct NextDayChip: View {
         .clipShape(RoundedRectangle(cornerSize: CGSize(width: 60, height: 60)))
         
     }
-}
-
-#Preview {
-    NextDayChip()
 }
