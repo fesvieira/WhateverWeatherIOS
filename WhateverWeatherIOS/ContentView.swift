@@ -9,6 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = WeatherViewModel()
+    
+    var searchButton: some View {
+        Image(systemName: "magnifyingglass")
+            .resizable()
+            .foregroundStyle(.white)
+            .frame(width: 24, height: 24)
+            .onTapGesture {
+                viewModel.getWeather()
+            }
+    }
 
     
     var body: some View {
@@ -53,7 +63,8 @@ struct ContentView: View {
             
             FormsTextField(
                 text: viewModel.currentCityBinding(),
-                placeholder: "Type a city"
+                placeholder: "Type a city",
+                rightView: AnyView(searchButton)
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .padding()

@@ -10,11 +10,26 @@ import SwiftUI
 struct NextDayChip: View {
     var forecastDay: WeatherData.ForecastDay
     
+    private var dateFormatter = DateFormatter()
+    private var date: String = ""
+    
+    init(forecastDay: WeatherData.ForecastDay) {
+        self.forecastDay = forecastDay
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = .autoupdatingCurrent
+        if let newDate = dateFormatter.date(from: forecastDay.date) {
+            let newDateFormatter = DateFormatter()
+            newDateFormatter.dateFormat = "MM/dd"
+            date = newDateFormatter.string(from: newDate)
+        }
+    }
+    
     var body: some View {
-        VStack {
-            Text(forecastDay.date)
+        VStack(spacing: 32) {
+            Text(date)
                 .foregroundStyle(.white)
-                .font(.title2)
+                .font(.title3)
             
             AsyncImage(url: URL(string: "https:\(forecastDay.day.condition.icon)"))
                 .frame(width: 16, height: 16)
@@ -22,11 +37,12 @@ struct NextDayChip: View {
             
             Text(String(forecastDay.day.avgtemp_c))
                 .foregroundStyle(.white)
-                .font(.title2)
+                .font(.title3)
         }
         .padding()
         .background(.AppDarkBlue)
-        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 60, height: 60)))
+        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 50, height: 50)))
+        .frame(maxWidth: 100)
         
     }
 }
