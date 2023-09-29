@@ -43,6 +43,5 @@ struct NextDayChip: View {
         .background(.AppDarkBlue)
         .clipShape(RoundedRectangle(cornerSize: CGSize(width: 50, height: 50)))
         .frame(maxWidth: 100)
-        
     }
 }

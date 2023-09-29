@@ -9,20 +9,23 @@ import Foundation
 import SwiftUI
 
 class WeatherViewModel: ObservableObject {
-    @Published var currentCity: String = "London"
+    @Published var currentCity: String
     @Published var weatherData: WeatherData.Entity? = nil
     @Published var unit: String = "°C"
+    @Published var isFetchingData = false
     
     private var weatherManager: WeatherManager? = nil
     
     init() {
+        self.currentCity = "London"
         self.weatherManager = WeatherManager(delegate: self)
         getWeather()
-        print("Aobaaa")
     }
     
     func getWeather() {
-        weatherManager?.fetchWeather(query: currentCity)
+        self.isFetchingData = true
+        self.weatherData = nil
+        self.weatherManager?.fetchWeather(query: self.currentCity)
     }
     
     // Binding
@@ -37,10 +40,16 @@ class WeatherViewModel: ObservableObject {
 
 extension WeatherViewModel: WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherData.Entity) {
-        self.weatherData = weather
+        DispatchQueue.main.async {
+            self.weatherData = weather
+            self.isFetchingData = false
+        }
     }
     
     func didFailWithError(error: Error) {
-        self.weatherData = nil
+        DispatchQueue.main.async {
+            self.weatherData = nil
+            self.isFetchingData = false
+        }
     }
 }

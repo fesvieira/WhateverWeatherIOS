@@ -45,11 +45,9 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodedData: WeatherData.Entity = try decoder.decode(WeatherData.Entity.self, from: weatherData)
-            print("success")
             return decodedData
         } catch {
             delegate?.didFailWithError(error: error)
-            print(error)
             return nil
         }
     }
