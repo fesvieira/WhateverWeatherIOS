@@ -18,10 +18,9 @@ class WeatherViewModel: ObservableObject {
     private let defaults = UserDefaults.standard
     
     init() {
-        self.currentCity = "London"
-        self.weatherManager = WeatherManager(delegate: self)
         self.currentCity = defaults.object(forKey: K.UserDefaults.currentCity) as? String ?? K.UserDefaults.defaultCity
         self.isCelsius = defaults.object(forKey: K.UserDefaults.isCelsius) as? Bool ?? K.UserDefaults.defaultIsCelsius
+        self.weatherManager = WeatherManager(delegate: self)
         getWeather()
     }
     
