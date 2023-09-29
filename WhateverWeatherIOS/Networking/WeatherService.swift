@@ -38,6 +38,8 @@ struct WeatherManager {
                 }
             }
             task.resume()
+            //lets add here for test
+            //again
         }
     }
     
