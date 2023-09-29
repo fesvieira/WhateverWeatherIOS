@@ -14,8 +14,8 @@ protocol WeatherManagerDelegate {
 }
 
 struct WeatherManager {
-    let weatherURL = K.weatherURL
-    let weatherPath = "/v1/forecast.json?key=\(K.weatherKey)"
+    let weatherURL = K.WeatherService.weatherURL
+    let weatherPath = "/v1/forecast.json?key=\(K.WeatherService.weatherKey)"
     var baseURL: String { "\(weatherURL)\(weatherPath)" }
     
     var delegate: WeatherManagerDelegate?

@@ -15,20 +15,25 @@ class WeatherViewModel: ObservableObject {
     @Published var isFetchingData = false
     
     private var weatherManager: WeatherManager? = nil
+    private let defaults = UserDefaults.standard
     
     init() {
         self.currentCity = "London"
         self.weatherManager = WeatherManager(delegate: self)
+        self.currentCity = defaults.object(forKey: K.UserDefaults.currentCity) as? String ?? K.UserDefaults.defaultCity
+        self.isCelsius = defaults.object(forKey: K.UserDefaults.isCelsius) as? Bool ?? K.UserDefaults.defaultIsCelsius
         getWeather()
     }
     
     func getWeather() {
         self.isFetchingData = true
         self.weatherData = nil
+        defaults.setValue(self.currentCity, forKey: K.UserDefaults.currentCity)
         self.weatherManager?.fetchWeather(query: self.currentCity)
     }
     
     func setUnit(isCelsius: Bool) {
+        defaults.setValue(isCelsius, forKey: K.UserDefaults.isCelsius)
         self.isCelsius = isCelsius
     }
     
