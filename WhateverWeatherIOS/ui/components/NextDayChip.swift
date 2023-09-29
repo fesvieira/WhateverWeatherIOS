@@ -9,12 +9,17 @@ import SwiftUI
 
 struct NextDayChip: View {
     var forecastDay: WeatherData.ForecastDay
+    var isCelsius: Bool
     
     private var dateFormatter = DateFormatter()
     private var date: String = ""
+    private var temp: String {
+        return String(isCelsius ? forecastDay.day.avgtemp_c : forecastDay.day.avgtemp_f)
+    }
     
-    init(forecastDay: WeatherData.ForecastDay) {
+    init(forecastDay: WeatherData.ForecastDay, isCelsius: Bool) {
         self.forecastDay = forecastDay
+        self.isCelsius = isCelsius
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = .autoupdatingCurrent
@@ -35,7 +40,7 @@ struct NextDayChip: View {
                 .frame(width: 16, height: 16)
                 .foregroundColor(.white)
             
-            Text(String(forecastDay.day.avgtemp_c))
+            Text(temp)
                 .foregroundStyle(.white)
                 .font(.title3)
         }

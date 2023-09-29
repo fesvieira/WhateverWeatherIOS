@@ -9,6 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = WeatherViewModel()
+    
+    private var temp: String {
+        guard let weather = viewModel.weatherData?.weather else {
+            return "--"
+        }
+        return String(viewModel.isCelsius ? weather.temp_c : weather.temp_f)
+    }
             
     var body: some View {
         ZStack {
@@ -73,12 +80,15 @@ struct ContentView: View {
     var weatherDataUi: some View {
         ScrollView {
             VStack {
-                Text(viewModel.unit)
+                Text(viewModel.isCelsius ? "°C" : "°F")
                     .padding(8)
                     .foregroundStyle(.white)
                     .background(.AppDarkBlue)
                     .clipShape(Circle())
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .onTapGesture {
+                        viewModel.setUnit(isCelsius: !viewModel.isCelsius)
+                    }
                 
                 LottieView(
                     name: viewModel.weatherData.weatherLottie,
@@ -87,11 +97,11 @@ struct ContentView: View {
                 )
                     .frame(width: 180, height: 180)
                 
-                Text(viewModel.currentCity)
+                Text(viewModel.weatherData?.location.name ?? "")
                     .foregroundStyle(.white)
                     .font(.title2)
                 
-                Text(String(viewModel.weatherData?.weather.temp_c ?? 0.0))
+                Text(temp)
                     .foregroundStyle(.white)
                     .font(.custom("system", size: 120))
                 
@@ -101,7 +111,7 @@ struct ContentView: View {
                 
                 HStack {
                     ForEach(viewModel.weatherData?.forecast.forecastDays ?? [], id: \.self) { forecastDay in
-                        NextDayChip(forecastDay: forecastDay)
+                        NextDayChip(forecastDay: forecastDay, isCelsius: viewModel.isCelsius)
                     }
                 }
             }

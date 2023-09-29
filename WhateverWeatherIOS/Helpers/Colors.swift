@@ -36,7 +36,6 @@ extension UIColor {
 
 extension ShapeStyle where Self == Color {
     static var raisinBlack: Color { .raisinBlack }
-    static var DarkBlue: Color { .DarkBlue }
     static var MidnightBlue: Color { .MidnightBlue }
     static var Gray: Color { .Gray }
     static var SunnyGradientTop: Color { .SunnyGradientTop }

@@ -11,7 +11,7 @@ import SwiftUI
 class WeatherViewModel: ObservableObject {
     @Published var currentCity: String
     @Published var weatherData: WeatherData.Entity? = nil
-    @Published var unit: String = "°C"
+    @Published var isCelsius: Bool = false
     @Published var isFetchingData = false
     
     private var weatherManager: WeatherManager? = nil
@@ -26,6 +26,10 @@ class WeatherViewModel: ObservableObject {
         self.isFetchingData = true
         self.weatherData = nil
         self.weatherManager?.fetchWeather(query: self.currentCity)
+    }
+    
+    func setUnit(isCelsius: Bool) {
+        self.isCelsius = isCelsius
     }
     
     // Binding
