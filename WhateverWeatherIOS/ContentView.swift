@@ -81,6 +81,7 @@ struct ContentView: View {
         ScrollView {
             VStack {
                 Text(viewModel.isCelsius ? "°C" : "°F")
+                    .frame(width: 24, height: 24)
                     .padding(8)
                     .foregroundStyle(.white)
                     .background(.AppDarkBlue)
@@ -119,28 +120,4 @@ struct ContentView: View {
         }
         .padding(.bottom, 90)
     }
-}
-
-struct Preview: View {
-    var body: some View {
-        VStack {
-            LottieView(
-                name: LottieAsset.loading.name,
-                loopMode: .loop,
-                speed: 1.0
-            )
-            .frame(width: 180, height: 180)
-            
-            Text("Powered by WeatherAPI.com")
-                .font(.title2)
-                .foregroundStyle(.white)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .background(.AppDarkBlue)
-        .ignoresSafeArea(.all)
-    }
-}
-
-#Preview {
-    Preview()
 }
